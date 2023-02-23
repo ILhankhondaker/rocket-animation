@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.svg {
+    display: block;
+    margin: 0 auto;
+    width: 640px;
+}
+
+@keyframes moving {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    20% {
+        transform: translateX(-50%);
+    }
+
+    40% {
+        transform: translateX(0%);
+    }
+
+    60% {
+        transform: translateX(50%);
+    }
+
+    80% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+@keyframes launching {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes thrustering {
+    0% {
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(2deg);
+    }
+}
+
+.clouds {
+    opacity: .5;
+    animation: moving 10s -2s infinite alternate linear forwards;
+}
+
+.rocket {
+    animation: launching 10s 0s infinite alternate ease-in-out forwards;
+}
+
+.thruster {
+    transform-origin: 50% 50%;
+    animation: thrustering 1s 0s infinite alternate linear forwards;
+}
